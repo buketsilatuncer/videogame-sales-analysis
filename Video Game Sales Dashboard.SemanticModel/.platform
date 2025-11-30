@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Video Game Sales Dashboard"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "82178bfd-96c5-405f-bddb-a4546108b90d"
+  }
+}

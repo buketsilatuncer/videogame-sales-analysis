@@ -1,0 +1,167 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "29b903079d941510bcc5",
+  "position": {
+    "x": 920.75780163821844,
+    "y": 80.96082011423978,
+    "z": 8001,
+    "height": 288.16563091509073,
+    "width": 340.30988793782143,
+    "tabOrder": 8001
+  },
+  "visual": {
+    "visualType": "keyDriversVisual",
+    "query": {
+      "queryState": {
+        "ExplainBy": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "video-game-sales-view"
+                    }
+                  },
+                  "Property": "Platform"
+                }
+              },
+              "queryRef": "video-game-sales-view.Platform",
+              "nativeQueryRef": "Platform"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "video-game-sales-view"
+                    }
+                  },
+                  "Property": "Publisher"
+                }
+              },
+              "queryRef": "video-game-sales-view.Publisher",
+              "nativeQueryRef": "Publisher"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "video-game-sales-view"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "video-game-sales-view.Year",
+              "nativeQueryRef": "Year"
+            }
+          ]
+        },
+        "Target": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "video-game-sales-view"
+                    }
+                  },
+                  "Property": "total_sales"
+                }
+              },
+              "queryRef": "video-game-sales-view.total_sales",
+              "nativeQueryRef": "Total Sales",
+              "displayName": "Total Sales"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "keyDrivers": [
+        {
+          "properties": {
+            "selectedAnalysis": {
+              "expr": {
+                "Literal": {
+                  "Value": "'keyInfluencers'"
+                }
+              }
+            },
+            "numericTargetSelectedKind": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4a0c4e336b1824025326",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "video-game-sales-view"
+              }
+            },
+            "Property": "total_sales"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "745f8c74ab00c9496a0d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "video-game-sales-view"
+              }
+            },
+            "Property": "Year"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "c990d449c2056ea5a099",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "video-game-sales-view"
+              }
+            },
+            "Property": "Platform"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "31a3311fe7d76289b082",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "video-game-sales-view"
+              }
+            },
+            "Property": "Publisher"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

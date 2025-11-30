@@ -1,0 +1,77 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
+  "name": "459e92f103974ac4d8b7",
+  "position": {
+    "x": 709.43633896715187,
+    "y": 16.466607480862326,
+    "z": 7000,
+    "height": 75.47195095395233,
+    "width": 223.67141828171327,
+    "tabOrder": 7000
+  },
+  "visual": {
+    "visualType": "slicer",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "video-game-sales-view"
+                    }
+                  },
+                  "Property": "Publisher"
+                }
+              },
+              "queryRef": "video-game-sales-view.Publisher",
+              "nativeQueryRef": "Publisher",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "data": [
+        {
+          "properties": {
+            "mode": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Dropdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d41529fed908ed2389a5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "video-game-sales-view"
+              }
+            },
+            "Property": "Publisher"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

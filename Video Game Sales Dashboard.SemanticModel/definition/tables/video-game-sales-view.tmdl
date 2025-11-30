@@ -1,0 +1,92 @@
+table video-game-sales-view
+	lineageTag: dd1c1602-4372-4e20-a45f-c9e964640223
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: cd23b8c5-8dcf-46b5-a240-0e4b86331456
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = User
+
+	column total_sales
+		dataType: int64
+		formatString: 0
+		lineageTag: a512d359-2089-45b0-8dc9-76f8d785072f
+		summarizeBy: sum
+		sourceColumn: total_sales
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: af68aa91-de20-4271-a8fd-a8622622497a
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Publisher
+		dataType: string
+		lineageTag: 9392cce4-a679-4cc7-9ea8-5b1c678a444b
+		summarizeBy: none
+		sourceColumn: Publisher
+
+		annotation SummarizationSetBy = Automatic
+
+	column Platform
+		dataType: string
+		lineageTag: 0a42361f-5aca-487b-8660-947a1292583e
+		summarizeBy: none
+		sourceColumn: Platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column Genre
+		dataType: string
+		lineageTag: 8542f9d9-1584-4b2b-8617-a5b9075e6c4a
+		summarizeBy: none
+		sourceColumn: Genre
+
+		annotation SummarizationSetBy = Automatic
+
+	column NA_Sales
+		dataType: int64
+		formatString: 0
+		lineageTag: 79434449-0202-486d-8b56-5606182729e5
+		summarizeBy: sum
+		sourceColumn: NA_Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	column EU_Sales
+		dataType: int64
+		formatString: 0
+		lineageTag: ae950397-e79f-458c-a424-7ac63312bd62
+		summarizeBy: sum
+		sourceColumn: EU_Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	column JP_Sales
+		dataType: int64
+		formatString: 0
+		lineageTag: e6f7a9be-2a4d-48a6-bb92-ff012a8b3e7d
+		summarizeBy: sum
+		sourceColumn: JP_Sales
+
+		annotation SummarizationSetBy = Automatic
+
+	partition video-game-sales-view = m
+		mode: import
+		source =
+				let
+				    Kaynak = Csv.Document(File.Contents("C:\Users\buket\Downloads\video-game-sales-view.csv"),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Tanıtılan Üst Bilgiler" = Table.PromoteHeaders(Kaynak, [PromoteAllScalars=true]),
+				    #"Değiştirilen Tür" = Table.TransformColumnTypes(#"Tanıtılan Üst Bilgiler",{{"Year", Int64.Type}, {"total_sales", Int64.Type}, {"Name", type text}, {"Publisher", type text}, {"Platform", type text}, {"Genre", type text}, {"NA_Sales", Int64.Type}, {"EU_Sales", Int64.Type}, {"JP_Sales", Int64.Type}})
+				in
+				    #"Değiştirilen Tür"
+
+	annotation PBI_ResultType = Table
+
