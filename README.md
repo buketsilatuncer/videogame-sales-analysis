@@ -65,7 +65,7 @@ The dashboard highlights the dataset’s key insights and trends.
 ─ Video Game Sales Dashboard.SemanticModel/
 ─ Video Game Sales Dashboard.Report/
 ─ Video Game Sales Dashboard.pbip
-─ gitignore
+─ .gitignore
 ```
 
 > **6. Tools & Technologies**
