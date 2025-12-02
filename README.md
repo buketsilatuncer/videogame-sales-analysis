@@ -55,7 +55,7 @@ Category distributions
 
 Interactive filters and slicers
 
-The dashboard highlights the dataset’s key insights and trends.
+The dashboard highlights the dataset’s key insights and trends. You can find a snapshot within this repository as a PNG.
 
 > **5. Project Structure**
 
@@ -66,6 +66,7 @@ The dashboard highlights the dataset’s key insights and trends.
 ─ Video Game Sales Dashboard.Report/
 ─ Video Game Sales Dashboard.pbip
 ─ .gitignore
+─ Video Game Sales Dashboard.png
 ```
 
 > **6. Tools & Technologies**
